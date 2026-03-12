@@ -771,4 +771,3 @@ st.markdown("---")
 st.caption(
     "Constituent lists are pulled from public index pages, while market data uses yfinance with defensive fallbacks."
 )
->>>>>>> 60fee70d72ddf572cbbc0be6bb75416834097cac
