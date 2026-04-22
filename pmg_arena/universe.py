@@ -3,6 +3,8 @@ universe.py
 Index constituent loaders. Cached for 24h.
 """
 
+from io import StringIO
+
 import pandas as pd
 import requests
 import streamlit as st
@@ -34,7 +36,7 @@ def _clean_name(name: str) -> str:
 def _fetch_tables(url: str):
     resp = requests.get(url, headers=UA, timeout=20)
     resp.raise_for_status()
-    return pd.read_html(resp.text)
+    return pd.read_html(StringIO(resp.text))
 
 
 @st.cache_data(ttl=86400, show_spinner=False)
