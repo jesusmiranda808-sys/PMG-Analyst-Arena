@@ -2,6 +2,7 @@ import random
 import time
 from typing import List, Optional
 
+from io import StringIO
 import pandas as pd
 import requests
 import streamlit as st
@@ -121,7 +122,7 @@ def safe_float(value):
 def fetch_tables_from_url(url: str):
     resp = requests.get(url, headers=DEFAULT_USER_AGENT, timeout=20)
     resp.raise_for_status()
-    return pd.read_html(resp.text)
+    return pd.read_html(StringIO(resp.text))
 
 
 @st.cache_data(ttl=3600, show_spinner=False)
