@@ -106,6 +106,3 @@ streamlit run app.py
 - **Market hours awareness:** Live compressed mode uses current prices via `yfinance`. Outside of market hours, prices don't change, so a round won't produce interesting P&L. Add a `MARKET_OPEN` check in the host dashboard if you want to block starting rounds when closed.
 - **Anti-collusion:** The anon key lets anyone with the code read/write. For a club game, fine. For a public release, lock down RLS policies to role-specific access.
 
-## Where PRMU fits in
-
-Nothing here talks to your PRMU Research Terminal yet, but the natural hook is: replace the lightweight research panel in `ui/player.py::_render_research_panel` with an iframe or link to a PRMU ticker page. That way teams can click "Open in PRMU" to get regime/volatility context before pitching.
