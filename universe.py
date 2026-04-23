@@ -4,6 +4,7 @@ Index constituent loaders. Cached for 24h.
 """
 
 from io import StringIO
+
 import pandas as pd
 import requests
 import streamlit as st
