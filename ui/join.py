@@ -87,7 +87,7 @@ def _render_host_tab():
     st.subheader("Start a new competition")
 
     with st.form("host_form"):
-        host_name = st.text_input("Your name (host)", placeholder="e.g., Jesus")
+        host_name = st.text_input("Your name (host)", placeholder="e.g., John Doe")
         host_submitted = st.form_submit_button("Create Room", type="primary", use_container_width=True)
 
         if host_submitted:
